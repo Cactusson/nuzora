@@ -1,0 +1,13 @@
+{% extends "concerts/_base.html" %}
+{% load concerts_extras %}
+
+{% block content %}
+    <h2 class="headline">{{ concert.get_band_name }}</h2>
+    <p><b>Дата:</b> {{ concert.date|translate_date }}.</p>
+    <p><b>Город:</b> {{ concert.city }}.</p>
+    <p><b>Цена билета:</b> {{ concert.ticket_price }}</p>
+    <p><b>Оценка:</b> {{ concert.grade }} из 10</p>
+    <p>{{ concert.text|safe|linebreaks }}</p>
+    <p>[<a href="{% url 'admin:concerts_concert_change' concert.pk %}">Редактировать</a>]</p>
+    <p>[<a href="{% url 'admin:concerts_concert_delete' concert.pk %}">Удалить</a>]</p>
+{% endblock content %}

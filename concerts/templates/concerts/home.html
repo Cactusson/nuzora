@@ -1,0 +1,12 @@
+{% extends "concerts/_base.html" %}
+{% load concerts_extras %}
+
+{% block content %}
+    <h1 class="headline">Нузора</h1>
+    <p>Концерты: <b>по дате</b> | <a href="{% url 'band_list' %}">по группам</a> | <a href="{% url 'city_list' %}">по городам</a></p>
+    <ol>
+        {% for concert in concerts %}
+            <li><a href="{{ concert.get_absolute_url }}">{{ concert.get_band_name }}</a> ({{ concert.date|translate_date }})</li>
+        {% endfor %}
+    </ol>
+{% endblock content %}

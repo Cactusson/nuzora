@@ -1,0 +1,24 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Нузора{% endblock title %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static "concerts/css/style.css" %}">
+</head>
+<body>
+    <div class='navigation'>
+        <div class='navigation-left'>
+            <a href="{% url 'home' %}">На главную</a> | 
+            <a href="{% url 'stats' %}">Статистика</a>
+        </div>
+        <div class="navigation-right">
+            <a href="{% url 'admin:concerts_concert_add' %}">Добавить новый концерт</a> | 
+            <a href="{% url 'admin:logout' %}">Выйти</a>
+        </div>
+    </div>
+    <div class='content'>
+        {% block content %}{% endblock content %}
+    </div>
+</body>
+</html>

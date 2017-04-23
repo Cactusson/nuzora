@@ -1,0 +1,30 @@
+body {
+    font-family: Verdana, sans-serif;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
+a {
+    color: #000080;
+}
+
+.navigation-left {
+    float: left;
+}
+
+.navigation-right {
+    float: right;
+}
+
+.content {
+    padding-top: 20px;
+}
+
+.headline {
+    text-align: center;
+}
+
+li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

@@ -1,0 +1,11 @@
+{% extends "concerts/_base.html" %}
+{% load concerts_extras %}
+
+{% block content %}
+    <h2 class="headline">Город: {{ object }}</h2>
+    <ol>
+        {% for concert in object.concerts.all %}
+            <li><a href="{{ concert.get_absolute_url }}">{{ concert.get_band_name }}</a> ({{ concert.date|translate_date }})</li>
+        {% endfor %}
+    </ol>
+{% endblock content %}
