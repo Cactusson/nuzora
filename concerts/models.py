@@ -42,7 +42,7 @@ class Concert(models.Model):
         if self.bands is not None:
             bands = [str(band) for band in list(self.bands.all())]
         else:
-            bands = ['[группа не указана]']
+            bands = ['---']
         bands = ', '.join(bands)
         return bands
 
